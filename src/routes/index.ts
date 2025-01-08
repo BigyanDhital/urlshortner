@@ -1,7 +1,7 @@
 import express from "express";
 
-import { ShortUrl } from "../db/schemas";
-import { redisDB } from "../db/redisDB";
+import { ShortUrl } from "../db/schemas/index.js";
+import { redisDB } from "../db/redisDB.js";
 
 export const initializeRoutes = (app: express) => {
   // Route to create short URL
