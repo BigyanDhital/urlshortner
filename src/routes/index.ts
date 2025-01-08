@@ -5,6 +5,9 @@ import { redisDB } from "../db/redisDB";
 
 export const initializeRoutes = (app: express) => {
   // Route to create short URL
+  app.get("/", async (req, res) => {
+    res.json({ message: "Shortner", time: new Date().getTime() });
+  });
   app.post("/shorten", async (req, res) => {
     try {
       const { url, shortId: customShortId } = req.body;
